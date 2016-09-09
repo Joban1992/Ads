@@ -17,7 +17,7 @@ angular.module("app.router",[]).config(function($stateProvider, $urlRouterProvid
                 controller: 'ActivityCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-activity" class="button button-fab button-fab-top-right expanded button-energized-900 flap" ng-click="serachFabBtnClicked()"><i class="icon" ng-class="searchScreen.searchBtnIcon"></i></button>',
+                template: '<button id="fab-activity" class="button button-fab button-fab-top-right expanded button-energized-900 spin" ng-click="serachFabBtnClicked()"><i class="icon" ng-class="searchScreen.searchBtnIcon"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         document.getElementById('fab-activity').classList.toggle('on');
