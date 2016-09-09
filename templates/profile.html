@@ -1,0 +1,39 @@
+<ion-view view-title="{{PROFILE_TAB_NAME}}">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/profile-bg.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/jon-snow.jpg');"></div>
+                <h3><a class="light">Joban</a></h3>
+                <h4>someemail@gmail.com</h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+             <a ui-sref="app.notifications" class="tab-item">
+                <i class="icon ion-android-mail"></i> {{NOTIFICATION_TAB_NAME}}
+            </a>
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-android-search"></i> {{SEARCH_TAB_NAME}}
+            </a>
+            <a ui-sref="app.myads" class="tab-item">
+                <i class="icon ion-images"></i> {{MY_ADS_TAB_NAME}}
+            </a>
+        </div>
+<!--        <h4 class="content padding double-padding-x">Basic Info</h4>
+        <div class="list animate-fade-slide-in-right">
+            Body
+            <a ui-sref="app.notifications" class="item item-avatar item-icon-right">
+                <img src="img/jon-snow.jpg">
+                <h2>Jon Snow</h2>
+                <p>Da illest illegitimate</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Stats</h4>
+        <div class="list animate-fade-slide-in-right">
+            Body
+            <a ui-sref="app.notifications" class="item item-avatar item-icon-right">
+                ss
+            </a>
+        </div>-->
+    </ion-content>
+</ion-view>
