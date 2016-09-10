@@ -1,7 +1,13 @@
+/* global angular, document, window */
 'use strict';
+
 angular.module('app.controllers', [])
 
+
+
         .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout, $window) {
+            // Form data for the login modal
+            //$scope.$parent.searchScreen.searchBoxVisible = false;
             $scope.loginData = {};
             $scope.isExpanded = false;
             $scope.hasHeaderFabLeft = false;
@@ -131,22 +137,29 @@ angular.module('app.controllers', [])
             $scope.$parent.clearFabs();
             $scope.$parent.setHeaderFab('left');
 
+            // Delay expansion
             $timeout(function() {
                 $scope.isExpanded = true;
                 $scope.$parent.setExpanded(true);
             }, 300);
+
+            // Set Motion
             ionicMaterialMotion.fadeSlideInRight();
+
+            // Set Ink
             ionicMaterialInk.displayEffect();
         })
 
         .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
             $scope.$parent.searchScreen.searchBoxVisible = false;
+            // Set Header
             $scope.$parent.showHeader();
             $scope.$parent.clearFabs();
             $scope.isExpanded = false;
             $scope.$parent.setExpanded(false);
             $scope.$parent.setHeaderFab(false);
 
+            // Set Motion
             $timeout(function() {
                 ionicMaterialMotion.slideUp({
                     selector: '.slide-up'
@@ -159,10 +172,12 @@ angular.module('app.controllers', [])
                 });
             }, 700);
 
+            // Set Ink
             ionicMaterialInk.displayEffect();
         })
 
         .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+            //alert('dd')
             $scope.$parent.searchScreen.searchBoxVisible = false;
             $scope.$parent.showHeader();
             $scope.$parent.clearFabs();
@@ -176,6 +191,12 @@ angular.module('app.controllers', [])
                 });
             }, 200);
 
+            //serach btn clicked
+            $scope.serachFabBtnClicked = function() {
+                alert('dd')
+            }
+
+            // Activate ink for controller
             ionicMaterialInk.displayEffect();
         })
 
@@ -186,6 +207,8 @@ angular.module('app.controllers', [])
             $scope.isExpanded = true;
             $scope.$parent.setExpanded(true);
             $scope.$parent.setHeaderFab(false);
+
+            // Activate ink for controller
             ionicMaterialInk.displayEffect();
 
             ionicMaterialMotion.pushDown({
@@ -195,6 +218,32 @@ angular.module('app.controllers', [])
                 selector: '.animate-fade-slide-in .item'
             });
 
+        })
+        
+        .controller('SearchCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+            $scope.$parent.searchScreen.searchBoxVisible = false;
+            // Set Header
+            $scope.$parent.showHeader();
+            $scope.$parent.clearFabs();
+            $scope.isExpanded = false;
+            $scope.$parent.setExpanded(false);
+            $scope.$parent.setHeaderFab(false);
+
+            // Set Motion
+            $timeout(function() {
+                ionicMaterialMotion.slideUp({
+                    selector: '.slide-up'
+                });
+            }, 300);
+
+            $timeout(function() {
+                ionicMaterialMotion.fadeSlideInRight({
+                    startVelocity: 3000
+                });
+            }, 700);
+
+            // Set Ink
+            ionicMaterialInk.displayEffect();
         })
 
         ;
