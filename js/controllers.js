@@ -21,6 +21,7 @@ angular.module('app.controllers', [])
             $scope.NOTIFICATION_TAB_NAME = "Notification";
             $scope.SEARCH_TAB_NAME = "Search";
             $scope.MY_ADS_TAB_NAME = "My Ads";
+            $scope.SEARCH_TAB_NAME = "Search";
 
             var navIcons = document.getElementsByClassName('ion-navicon');
             for (var i = 0; i < navIcons.length; i++) {
@@ -229,12 +230,12 @@ angular.module('app.controllers', [])
             $scope.$parent.setExpanded(false);
             $scope.$parent.setHeaderFab(false);
 
-        //     // Set Motion
-            $timeout(function() {
-                ionicMaterialMotion.slideUp({
-                    selector: '.slide-up'
-                });
-            }, 300);
+            // Set Motion
+//            $timeout(function() {
+//                ionicMaterialMotion.slideUp({
+//                    selector: '.slide-up'
+//                });
+//            }, 300);
 
             $timeout(function() {
                 ionicMaterialMotion.fadeSlideInRight({
