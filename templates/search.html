@@ -1,24 +1,43 @@
-<ion-view view-title="{{PROFILE_TAB_NAME}}">
+<ion-view view-title="{{APP_NAME}}">
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-        <div class="hero slide-up" style="background-image: url('img/profile-bg.jpg');">
+        <style>
+            .hero.slide-up *, .slide-up * {
+                opacity: 1;
+                filter: alpha(opacity=0);
+            }
+
+            .item.item-md-label{
+                border-color: transparent;
+            }
+            .item-md-label input{
+                background-color: transparent;
+                border-bottom: 2px solid #414052;
+            }
+
+            .hero>.content {
+                 top: 30%; 
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                z-index: 1;
+            }
+        </style>
+        <div class="hero slide-up" style="background-image: url('img/search-bg.jpg');">
             <div class="content">
                 <!--                <div class="avatar" style="background-image: url('img/jon-snow.jpg');"></div>
                                 <h3><a class="light">Joban</a></h3>
                                 <h4>someemail@gmail.com</h4>-->
-                <style>
-                    .item.item-md-label{
-                        border-color: transparent;
-                    }
-                    .item-md-label input{
-                        background-color: transparent;
-                        border-bottom: 2px solid #414052;
-                    }
-                </style>
                 <div class="row">
                     <div class="col-5 col-m-10 col-s-11" style="margin: 0 auto">
-                        <ion-md-input placeholder="Search Here" highlight-color="balanced" type="text"></ion-md-input>
+                        <ion-md-input placeholder="Search Here" highlight-color="balanced" type="text" lable-style="color:#33cd5f;"></ion-md-input>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-5 col-m-10 col-s-11" style="margin: 0 auto">
+                        <button class="button button-full button-assertive ink">Go Ahead</button>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <!--     <div class="tabs tabs-dark tabs-icon-top static">
