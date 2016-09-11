@@ -13,7 +13,7 @@ angular.module('app.controllers', [])
             $scope.hasHeaderFabLeft = false;
             $scope.hasHeaderFabRight = false;
             $scope.searchScreen = {
-                searchBoxVisible: false,
+                searchBoxVisible: true,
                 searchBtnIcon: 'ion-android-search'
             };
             $scope.APP_NAME = "App_Name";
@@ -31,20 +31,20 @@ angular.module('app.controllers', [])
             }
 
             //search btn click event
-            $scope.serachFabBtnClicked = function() {
-                $timeout(function() {
-                    var element = $window.document.getElementById("searchBox");
-                    if (element)
-                        element.focus();
-                });
-                if ($scope.searchScreen.searchBoxVisible) {
-                    $scope.searchScreen.searchBoxVisible = false;
-                    $scope.searchScreen.searchBtnIcon = 'ion-android-search';
-                } else {
-                    $scope.searchScreen.searchBoxVisible = true;
-                    $scope.searchScreen.searchBtnIcon = 'ion-close-round';
-                }
-            }
+//            $scope.serachFabBtnClicked = function() {
+//                $timeout(function() {
+//                    var element = $window.document.getElementById("searchBox");
+//                    if (element)
+//                        element.focus();
+//                });
+//                if ($scope.searchScreen.searchBoxVisible) {
+//                    $scope.searchScreen.searchBoxVisible = false;
+//                    $scope.searchScreen.searchBtnIcon = 'ion-android-search';
+//                } else {
+//                    $scope.searchScreen.searchBoxVisible = true;
+//                    $scope.searchScreen.searchBtnIcon = 'ion-close-round';
+//                }
+//            }
 
             ////////////////////////////////////////
             // Layout Methods
@@ -117,7 +117,7 @@ angular.module('app.controllers', [])
         })
 
         .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $log, $state) {
-            $scope.$parent.searchScreen.searchBoxVisible = false;
+            //$scope.$parent.searchScreen.searchBoxVisible = false;
             $scope.doLogin = function() {
                 $scope.$parent.clearFabs();
                 $timeout(function() {
@@ -221,6 +221,96 @@ angular.module('app.controllers', [])
 
         })
 
-        
+        .controller('SearchCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+            $scope.$parent.searchScreen.searchBoxVisible = true;
+            // Set Header
+            $scope.$parent.showHeader();
+            $scope.$parent.clearFabs();
+            $scope.isExpanded = false;
+            $scope.$parent.setExpanded(false);
+            $scope.$parent.setHeaderFab(false);
+            
+          
+
+            // Set Motion
+//            $timeout(function() {
+//                ionicMaterialMotion.slideUp({
+//                    selector: '.slide-up'
+//                });
+//            }, 300);
+
+            $timeout(function() {
+                ionicMaterialMotion.fadeSlideIn({
+                    selector: '.animate-fade-slide-in .item'
+                });
+            }, 200);
+            $timeout(function() {
+                ionicMaterialMotion.fadeSlideInRight({
+                    startVelocity: 3000
+                });
+            }, 700);
+
+            // Set Ink
+            ionicMaterialInk.displayEffect();
+
+            $scope.putAtTop = "";
+            $scope.searchResultFlag = false;
+            $scope.searchBtnClicked = function() {
+                console.log('ss');
+                $scope.putAtTop = "put-at-top";
+                console.log($scope.putAtTop);
+                $timeout(function() {
+                    document.getElementById('fab-activity').classList.toggle('on');
+                }, 200);
+
+                $timeout(function() {
+                    $scope.searchResultFlag = true;
+                }, 400);
+
+            }
+        })
+
+        .controller('LandingCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+            $scope.$parent.searchScreen.searchBoxVisible = false;
+            // Set Header
+            $scope.$parent.showHeader();
+            $scope.$parent.clearFabs();
+            $scope.isExpanded = false;
+            $scope.$parent.setExpanded(false);
+            $scope.$parent.setHeaderFab(false);
+
+            // Set Motion
+//            $timeout(function() {
+//                ionicMaterialMotion.slideUp({
+//                    selector: '.slide-up'
+//                });
+//            }, 300);
+
+            $timeout(function() {
+                ionicMaterialMotion.fadeSlideInRight({
+                    startVelocity: 3000
+                });
+            }, 700);
+
+            // Set Ink
+            ionicMaterialInk.displayEffect();
+
+            $scope.putAtTop = "";
+            $scope.searchResultFlag = false;
+            $scope.searchBtnClicked = function() {
+                console.log('ss');
+                $scope.putAtTop = "put-at-top";
+                console.log($scope.putAtTop);
+                $timeout(function() {
+                    document.getElementById('fab-activity').classList.toggle('on');
+                }, 200);
+
+                $timeout(function() {
+                    $scope.searchResultFlag = true;
+                }, 400);
+
+            }
+        })
+
 
         ;
