@@ -1,8 +1,10 @@
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
         <ion-nav-bar class="bar-assertive-900" ng-class="{
-                    expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+                    expanded: isExpanded, 'has - header - fab - left': hasHeaderFabLeft, 'has - header - fab - right': hasHeaderFabRight}" align-title="left">
+
             <ion-nav-back-button class="no-text">
+
             </ion-nav-back-button>
             <style>
                 #searchBox{
@@ -19,10 +21,36 @@
                     font-weight: 200;
                 }
 
+                .search-here{
+                    background-color: rgba(0,0,0,0.2);
+                    border-radius: 4px;
+                    padding: 0 5px 0 5px !important;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                    width: 190px;
+                }
+
+                .buttons.buttons-right.header-item{
+                    width: 100%;
+                }
+
+                .right-buttons{
+                    margin: 0 auto !important;
+                }
+
+                .float-right{
+                    position: absolute;
+                    right: 0;
+                }
+
                 /*# Mobile*/
                 @media only screen and (min-width: 280px){
                     #searchBox{
                         width: 55%;
+                    }
+
+                    .search-here{
+                        width: 190px;
                     }
                 }
 
@@ -31,6 +59,10 @@
                     #searchBox{
                         width: 60%;
                     }
+                    
+                     .search-here{
+                           width: 375px;
+                    }
                 } 
 
                 /*# Desktop*/
@@ -38,16 +70,26 @@
                     #searchBox{
                         width: 60%;
                     }
+                    
+                     .search-here{
+                        width: 375px;
+                    }
                 }
 
+
+
             </style>
+
             <!--            <div id="searchBox" ng-if="searchScreen.searchBoxVisible">Joban</div>-->
-            <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">
-            <ion-nav-buttons side="right">
-                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+            <!--            <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">-->
+            <ion-nav-buttons side="right"  >
+                <!--<ion-md-input placeholder="Search Here" highlight-color="balanced" type="text" lable-style="color:#33cd5f;" ng-click="searchBtnClicked()"></ion-md-input>-->
+                <input type="text"  placeholder="Search..." class="search-here">
+                <button class="button button-icon button-clear ion-android-more-vertical float-right" menu-toggle="right">
                 </button>
             </ion-nav-buttons>
         </ion-nav-bar>
+        <!--<ion-nav-view></ion-nav-view>-->
         <ion-nav-view name="fabContent"></ion-nav-view>
         <ion-nav-view name="menuContent" ng-class="{
                     expanded: isExpanded
@@ -80,5 +122,6 @@
                 </ion-item>
             </ion-list>
         </ion-content>
+        <!--<div id="mysearch"></div>-->
     </ion-side-menu>
 </ion-side-menus>
