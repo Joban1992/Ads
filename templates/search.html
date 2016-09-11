@@ -1,82 +1,37 @@
-<ion-view view-title="{{APP_NAME}}">
-    <ion-content ng-class="{expanded:$scope.isExpanded}">
+<ion-view view-title="">
+    <div class="search">Search Here</div>
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
         <style>
-            .hero.slide-up *, .slide-up * {
-                opacity: 1;
-                filter: alpha(opacity=0);
-            }
-
-            .item.item-md-label{
-                border-color: transparent;
-            }
-            .item-md-label input{
-                background-color: transparent;
-                border-bottom: 2px solid #414052;
-            }
-
-            .hero>.content {
-                top: 30%; 
-                position: absolute;
+            .initial-letter{
+                background-color: #e65100;
                 text-align: center;
-                width: 100%;
-                z-index: 1;
-                transition: all .5s ease-in-out;
+                font-size: 2.5em;
+                display: table;
+                vertical-align: c;
+                line-height: 46px;
+                color: #fff;
+                border: 3px solid #cc4b04;
             }
-            .put-at-top{
-                top: -5%!important; 
-            }
-
-            .hero>.content.put-at-top .button{
-                display: none;
-            }
+           
         </style>
-        <div class="hero slide-up" style="background-image: url('img/search-bg.jpg');">
-            <div class="content" ng-class="putAtTop">
-
-                <div class="row">
-                    <div class="col-5 col-m-10 col-s-11" style="margin: 0 auto">
-                        <ion-md-input placeholder="Search Here" highlight-color="balanced" type="text" lable-style="color:#33cd5f;" ng-click="searchBtnClicked()"></ion-md-input>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5 col-m-10 col-s-11" style="margin: 0 auto">
-                        <button class="button button-full button-assertive ink" ng-click="searchBtnClicked()">Go Ahead</button>
-                    </div>
-                </div>
-
-            </div>
-            <div  ng-if="searchResultFlag" style="margin-top:80px;">
-            <style>
-                .initial-letter{
-                    background-color: #e65100;
-                    text-align: center;
-                    font-size: 2.5em;
-                    display: table;
-                    vertical-align: c;
-                    line-height: 46px;
-                    color: #fff;
-                    border: 3px solid #cc4b04;
-                }
-
-            </style>
-            <div class="item card-item">
-                <!--            <div ui-sref="app.myads1" class="card stable-bg ink ink-dark" >-->
-                <div class="card stable-bg ink ink-dark" >
-                    <div class="item item-avatar item-text-wrap">
-                        <span class="avatar initial-letter">J</span>
-                        <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
-                        can see full details about advertisement.
-                        <div class="card-footer text-right">
-                            <i class="icon ion-star"></i> 4
-                            <i class="icon ion-heart assertive"></i> Approved
-                            <div class="pull-left">
-                                <i class="icon ion-clock"></i> 1 day ago
-                            </div>
+        <div class="item card-item">
+            <!--            <div ui-sref="app.myads1" class="card stable-bg ink ink-dark" >-->
+            <div class="card stable-bg ink ink-dark" >
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar initial-letter">J</span>
+                    <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
+                    can see full details about advertisement.
+                    <div class="card-footer text-right">
+                        <i class="icon ion-star"></i> 4
+                        <i class="icon ion-heart assertive"></i> Approved
+                        <div class="pull-left">
+                            <i class="icon ion-clock"></i> 1 day ago
                         </div>
                     </div>
                 </div>
             </div>
-             <div class="item card-item">
+        </div>
+        <div class="item card-item">
             <div class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
                     <!--<span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>-->
@@ -110,34 +65,5 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        
-        <!--     <div class="tabs tabs-dark tabs-icon-top static">
-     
-                 <a ui-sref="app.activity" class="tab-item">
-                     <i class="icon ion-android-search"></i> {{SEARCH_TAB_NAME}}
-                 </a>
-                 <a ui-sref="app.myads" class="tab-item">
-                     <i class="icon ion-images"></i> {{MY_ADS_TAB_NAME}}
-                 </a>
-             </div>
-           <h4 class="content padding double-padding-x">Basic Info</h4>
-             <div class="list animate-fade-slide-in-right">
-                 Body
-                 <a ui-sref="app.notifications" class="item item-avatar item-icon-right">
-                     <img src="img/jon-snow.jpg">
-                     <h2>Jon Snow</h2>
-                     <p>Da illest illegitimate</p>
-                     <i class="icon ion-chatbubble muted"></i>
-                 </a>
-             </div>
-             <h4 class="content padding double-padding-x">Stats</h4>
-             <div class="list animate-fade-slide-in-right">
-                 Body
-                 <a ui-sref="app.notifications" class="item item-avatar item-icon-right">
-                     ss
-                 </a>
-             </div>-->
     </ion-content>
 </ion-view>
