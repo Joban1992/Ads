@@ -12,13 +12,31 @@
                 color: #fff;
                 border: 3px solid #cc4b04;
             }
-           
+            .item.item-avatar{
+                padding-left: 126px !important;
+            }
+            .avatar{
+                display: table !important;
+                height: 100px !important;
+                left: 0px !important;
+                position: absolute;
+                width: 109px !important ;
+                top: 2px;
+                /*text-align: center;*/
+                border-radius: 0 !important;
+            }
+            .avatar b{
+                display: table-cell;
+                vertical-align: middle
+            }
+
         </style>
         <div class="item card-item">
             <!--            <div ui-sref="app.myads1" class="card stable-bg ink ink-dark" >-->
             <div class="card stable-bg ink ink-dark" >
                 <div class="item item-avatar item-text-wrap">
-                    <span class="avatar initial-letter">J</span>
+                    <span class="avatar initial-letter"><b>#Text</b></span>
+                    <h3><strong>Main Title</strong></h3>
                     <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
                     can see full details about advertisement.
                     <div class="card-footer text-right">
@@ -35,7 +53,8 @@
             <div class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
                     <!--<span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>-->
-                    <span class="avatar initial-letter">O</span>
+                     <span class="avatar initial-letter"><b>#Num</b></span>
+                    <h3><strong>Main Title</strong></h3>
                     <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
                     can see full details about advertisement.
                     <div class="card-footer text-right">
@@ -51,7 +70,8 @@
         <div class="item card-item">
             <div class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
-                    <span class="avatar initial-letter">B</span>
+                     <span class="avatar initial-letter"><b>#Text</b></span>
+                    <h3><strong>Main Title</strong></h3>
                     <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
                     can see full details about advertisement.
                     <a class="image"><img src="img/sansa-snowcastle3.jpg"></a>
@@ -65,5 +85,59 @@
                 </div>
             </div>
         </div>
+
+
+
+        <!--         <div class="item card-item">
+                                <div ui-sref="app.myads1" class="card stable-bg ink ink-dark" >
+                    <div class="card stable-bg ink ink-dark" >
+                        <div class="item item-avatar item-text-wrap">
+                            <span class="avatar initial-letter">J</span>
+                            <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
+                            can see full details about advertisement.
+                            <div class="card-footer text-right">
+                                <i class="icon ion-star"></i> 4
+                                <i class="icon ion-heart assertive"></i> Approved
+                                <div class="pull-left">
+                                    <i class="icon ion-clock"></i> 1 day ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item card-item">
+                    <div class="card stable-bg ink ink-dark">
+                        <div class="item item-avatar item-text-wrap">
+                            <span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>
+                            <span class="avatar initial-letter">O</span>
+                            <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
+                            can see full details about advertisement.
+                            <div class="card-footer text-right">
+                                <i class="icon ion-star assertive"></i> 4
+                                <i class="icon ion-heart assertive"></i> Approved
+                                <div class="pull-left">
+                                    <i class="icon ion-clock"></i> 12 mins ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item card-item">
+                    <div class="card stable-bg ink ink-dark">
+                        <div class="item item-avatar item-text-wrap">
+                            <span class="avatar initial-letter">B</span>
+                            <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
+                            can see full details about advertisement.
+                            <a class="image"><img src="img/sansa-snowcastle3.jpg"></a>
+                            <div class="card-footer text-right">
+                                <i class="icon ion-star assertive"></i> 2
+                                <i class="icon ion-heart assertive"></i> Approved
+                                <div class="pull-left">
+                                    <i class="icon ion-clock"></i> 3 hrs ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
     </ion-content>
 </ion-view>
