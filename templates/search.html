@@ -30,6 +30,52 @@
                 vertical-align: middle
             }
 
+            /*# Mobile*/
+            @media only screen and (min-width: 280px){
+                .item.item-avatar{
+                    padding-left: 10px !important;
+                    padding-top: 57px;
+                }
+
+                .avatar{
+                    display: inline-block !important;
+                    height: 50px !important;
+                    left: 0px !important;
+                    position: absolute;
+                    width: 100% !important ;
+                    top: 2px;
+                    /*text-align: center;*/
+                    border-radius: 0 !important;
+                }
+
+
+            }
+
+            /*# Tablet*/
+            @media screen and (min-width: 768px){
+
+            } 
+
+            /*# Desktop*/
+            @media screen and (min-width: 992px){
+
+                .item.item-avatar{
+                    padding-left: 126px !important;
+                    padding-top: 10px;
+                }
+
+                .avatar{
+                    display: table !important;
+                    height: 100px !important;
+                    left: 0px !important;
+                    position: absolute;
+                    width: 109px !important ;
+                    top: 2px;
+                    /*text-align: center;*/
+                    border-radius: 0 !important;
+                }
+            }
+
         </style>
         <div class="item card-item">
             <!--            <div ui-sref="app.myads1" class="card stable-bg ink ink-dark" >-->
@@ -53,7 +99,7 @@
             <div class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
                     <!--<span class="avatar" style="background-image: url('img/jon-snow.jpg');"></span>-->
-                     <span class="avatar initial-letter"><b>#Num</b></span>
+                    <span class="avatar initial-letter"><b>#Num</b></span>
                     <h3><strong>Main Title</strong></h3>
                     <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
                     can see full details about advertisement.
@@ -70,11 +116,11 @@
         <div class="item card-item">
             <div class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
-                     <span class="avatar initial-letter"><b>#Text</b></span>
+                    <span class="avatar initial-letter"><b>#Text</b></span>
                     <h3><strong>Main Title</strong></h3>
                     <strong>Advertisement text</strong> & <strong>picture (if any)</strong> will be displayed here, on click it will take user to new view where he/she
                     can see full details about advertisement.
-                    <a class="image"><img src="img/sansa-snowcastle3.jpg"></a>
+                    <!--                    <a class="image"><img src="img/sansa-snowcastle3.jpg"></a>-->
                     <div class="card-footer text-right">
                         <i class="icon ion-star assertive"></i> 2
                         <i class="icon ion-heart assertive"></i> Approved
