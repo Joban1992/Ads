@@ -1,3 +1,93 @@
+<!--<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive-900" ng-class="{
+                    expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <style>
+                #searchBox{
+                    z-index: 1033;
+                    position: absolute;
+                    background-color: #e65100;
+                    top: 62px;
+                    width: 55%;
+                    padding: 5px 5px 5px 5px;
+                    right: 63px;
+                    border-radius: 3px;
+                    border: 1px solid #e65100;
+                    color: #fff;
+                    font-weight: 200;
+                }
+
+                /*# Mobile*/
+                @media only screen and (min-width: 280px){
+                    #searchBox{
+                        width: 55%;
+                    }
+                }
+
+                /*# Tablet*/
+                @media screen and (min-width: 768px){
+                    #searchBox{
+                        width: 60%;
+                    }
+                } 
+
+                /*# Desktop*/
+                @media screen and (min-width: 992px){
+                    #searchBox{
+                        width: 60%;
+                    }
+                }
+
+            </style>
+                        <div id="searchBox" ng-if="searchScreen.searchBoxVisible">Joban</div>
+            <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+        <ion-nav-view name="fabContent"></ion-nav-view>
+        <ion-nav-view name="menuContent" ng-class="{
+                    expanded: isExpanded
+                }" ></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right">
+        <ion-header-bar class="dark-bg expanded">
+            <span class="avatar" style="background: url('img/jon-snow.jpg'); background-size: cover;"></span>
+            <h2>Joban</h2>
+        </ion-header-bar>
+        <ion-content class="stable-bg has-expanded-header">
+            <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.profile">
+                    {{PROFILE_TAB_NAME}}
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.notifications">
+                    {{NOTIFICATION_TAB_NAME}}
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.activity">
+                    {{SEARCH_TAB_NAME}}
+                </ion-item>
+                                <ion-item nav-clear menu-close ui-sref="app.login">
+                                    Login
+                                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.myads">
+                    {{MY_ADS_TAB_NAME}}
+                </ion-item>
+                <ion-item nav-clear menu-close>
+                    Logout
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>-->
+
+
+
+
+
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
         <ion-nav-bar class="bar-assertive-900" ng-class="{
@@ -28,6 +118,7 @@
                     margin: 0 auto;
                     margin-top: 5px;
                     width: 190px;
+                    transition: all .5s ease-in;
                 }
 
                 .buttons.buttons-right.header-item{
@@ -43,6 +134,33 @@
                     right: 0;
                 }
 
+                .quick-links{
+                    position: absolute;
+                    z-index: 1033;
+                    top: 74px;
+                    background: #b71c1c;
+                    height: 34px;
+                    width: 100%;
+                }
+
+                .quick-links ul{
+                    /*background: red;*/
+                    width: 100%;
+                    margin: 0 auto;
+                    display: block;
+                }
+
+                .quick-links ul li{
+                    display: inline-block;
+                    padding: 6px;
+                    text-align: center;
+                    width: 23%;
+                }
+
+                .quick-links ul li i{
+                    font-size: 1.3em;
+                }
+
                 /*# Mobile*/
                 @media only screen and (min-width: 280px){
                     #searchBox{
@@ -50,8 +168,12 @@
                     }
 
                     .search-here{
-                        width: 190px;
-                          
+                        /*width: 190px;*/
+                        width: 277px;
+                    }
+
+                    .quick-links ul{
+                        width: 277px;
                     }
                 }
 
@@ -60,9 +182,13 @@
                     #searchBox{
                         width: 60%;
                     }
+
+                    .search-here{
+                        width: 375px;
+                    }
                     
-                     .search-here{
-                           width: 375px;
+                     .quick-links ul{
+                        width: 375px;
                     }
                 } 
 
@@ -71,8 +197,13 @@
                     #searchBox{
                         width: 60%;
                     }
+
+                    .search-here{
+                        width: 375px;
+
+                    }
                     
-                     .search-here{
+                    .quick-links ul{
                         width: 375px;
                     }
                 }
@@ -81,14 +212,28 @@
 
             </style>
 
-<!--                        <div id="searchBox" ng-if="searchScreen.searchBoxVisible">Joban</div>
-                        <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">-->
+            <!--                        <div id="searchBox" ng-if="searchScreen.searchBoxVisible">Joban</div>
+                                    <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">-->
             <ion-nav-buttons side="right" >
                 <!--<ion-md-input placeholder="Search Here" highlight-color="balanced" type="text" lable-style="color:#33cd5f;" ng-click="searchBtnClicked()"></ion-md-input>-->
-                <input type="text"  placeholder="Search..." class="search-here" ng-if="searchScreen.searchBoxVisible">
+                <div style="display: table; width: 100%;" ng-style="inputBoxAnimation"  ng-show="searchScreen.searchBoxVisible">
+                    <div style="display: table-row; text-align:  center;">App Name</div>
+                    <div style="display: table-row;">
+                        <input type="text"  placeholder="Search..." class="search-here"  >
+                    </div>
+                </div>
+
                 <button class="button button-icon button-clear ion-android-more-vertical float-right" menu-toggle="right">
                 </button>
             </ion-nav-buttons>
+            <div class="quick-links" ng-show="searchScreen.searchBoxVisible">
+                <ul>
+                    <li><i class="icon ion-android-mail"></i></li>
+                    <li><i class="icon ion-images"></i></li>
+                    <li><i class="icon ion-android-search"></i></li>
+                    <li><i class="icon ion-android-mail"></i></li>
+                </ul>
+            </div>
         </ion-nav-bar>
         <ion-nav-view></ion-nav-view>
         <ion-nav-view name="fabContent"></ion-nav-view>
@@ -112,9 +257,9 @@
                 <ion-item nav-clear menu-close ui-sref="app.activity">
                     {{SEARCH_TAB_NAME}}
                 </ion-item>
-                                <ion-item nav-clear menu-close ui-sref="app.login">
-                                    Login
-                                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.login">
+                    Login
+                </ion-item>
                 <ion-item nav-clear menu-close ui-sref="app.myads">
                     {{MY_ADS_TAB_NAME}}
                 </ion-item>
