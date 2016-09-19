@@ -3,8 +3,6 @@
 
 angular.module('app.controllers', [])
 
-
-
         .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout, $window) {
             // Form data for the login modal
             //$scope.$parent.searchScreen.searchBoxVisible = false;
@@ -117,7 +115,7 @@ angular.module('app.controllers', [])
         })
 
         .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $log, $state) {
-            //$scope.$parent.searchScreen.searchBoxVisible = false;
+            $scope.$parent.searchScreen.searchBoxVisible = false;
             $scope.doLogin = function() {
                 $scope.$parent.clearFabs();
                 $timeout(function() {
@@ -222,23 +220,18 @@ angular.module('app.controllers', [])
         })
 
         .controller('SearchCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-            $scope.$parent.searchScreen.searchBoxVisible = true;
+
             // Set Header
             $scope.$parent.showHeader();
             $scope.$parent.clearFabs();
-            $scope.isExpanded = false;
             $scope.$parent.setExpanded(false);
             $scope.$parent.setHeaderFab(false);
-            
-          
 
-            // Set Motion
-//            $timeout(function() {
-//                ionicMaterialMotion.slideUp({
-//                    selector: '.slide-up'
-//                });
-//            }, 300);
 
+            $scope.$parent.setHeaderFab('left');
+            $scope.isExpanded = true;
+            $scope.$parent.setExpanded(true);
+            // Delay expansion
             $timeout(function() {
                 ionicMaterialMotion.fadeSlideIn({
                     selector: '.animate-fade-slide-in .item'
@@ -248,6 +241,10 @@ angular.module('app.controllers', [])
                 ionicMaterialMotion.fadeSlideInRight({
                     startVelocity: 3000
                 });
+
+                //App Name and Search box visibility
+                $scope.$parent.searchScreen.searchBoxVisible = true;
+                $scope.$parent.inputBoxAnimation = {'margin-top': '10px'};
             }, 700);
 
             // Set Ink
