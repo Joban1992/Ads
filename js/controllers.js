@@ -229,8 +229,8 @@ angular.module('app.controllers', [])
 
 
             $scope.$parent.setHeaderFab('left');
-            $scope.isExpanded = true;
-            $scope.$parent.setExpanded(true);
+//            $scope.isExpanded = true;
+//            $scope.$parent.setExpanded(true);
             // Delay expansion
             $timeout(function() {
                 ionicMaterialMotion.fadeSlideIn({
