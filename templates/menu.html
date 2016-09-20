@@ -117,7 +117,7 @@
                     padding: 0 5px 0 5px !important;
                     margin: 0 auto;
                     margin-top: 5px;
-                    width: 190px;
+                    /*width: 190px;*/
                     transition: all .5s ease-in;
                 }
 
@@ -137,29 +137,55 @@
                 .quick-links{
                     position: absolute;
                     z-index: 1033;
-                    top: 74px;
+                    top: 42px;
                     background: #b71c1c;
                     height: 34px;
                     width: 100%;
                 }
 
-                .quick-links ul{
+                .header-bar{
+                    position: absolute;
+                    z-index: 1033;
+                    top: 0;
+                    background: transparent;
+                    height: 34px;
+                    width: 100%;
+                }
+
+                .quick-links ul, .header-bar ul{
                     /*background: red;*/
                     width: 100%;
                     margin: 0 auto;
                     display: block;
                 }
 
-                .quick-links ul li{
+                .quick-links ul li, .header-bar ul li{
                     display: inline-block;
                     padding: 6px;
                     text-align: center;
                     width: 23%;
+                    float: left;
                 }
 
-                .quick-links ul li i{
+                .quick-links ul li i, .header-bar ul li i{
                     font-size: 1.3em;
                 }
+
+                .header-bar ul li i{
+                    font-size: 3em;
+                }
+                .header-bar ul li input{
+                    width: 87%;
+                    background-color: rgba(0,0,0,0.2);
+                    border-radius: 4px;
+                    margin-top: 5px;
+                    /*width: 190px;*/
+                    transition: all .5s ease-in;
+                }
+
+
+
+
 
                 /*# Mobile*/
                 @media only screen and (min-width: 280px){
@@ -169,12 +195,17 @@
 
                     .search-here{
                         /*width: 190px;*/
-                        width: 277px;
+                        /*width: 277px;*/
                     }
 
-                    .quick-links ul{
+                    .quick-links ul, .header-bar ul{
                         width: 277px;
                     }
+                    .header-bar ul li input{
+                        width: 87%;
+                    }
+
+
                 }
 
                 /*# Tablet*/
@@ -184,12 +215,18 @@
                     }
 
                     .search-here{
+                        /*width: 375px;*/
+                    }
+
+
+
+                    .quick-links ul, .header-bar ul{
                         width: 375px;
                     }
-                    
-                     .quick-links ul{
-                        width: 375px;
-                    }
+
+                    /*                    .header-bar ul li input{
+                                            width: 80%;
+                                        }*/
                 } 
 
                 /*# Desktop*/
@@ -199,15 +236,20 @@
                     }
 
                     .search-here{
-                        width: 375px;
+                        /*width: 375px;*/
 
                     }
-                    
-                    .quick-links ul{
+
+
+                    .quick-links ul, .header-bar ul{
                         width: 375px;
                     }
+
+                    /*                    .header-bar ul li input{
+                                            width: 80%;
+                                        }*/
+
                 }
-
 
 
             </style>
@@ -216,16 +258,25 @@
                                     <input type="text" id="searchBox" ng-show="searchScreen.searchBoxVisible" placeholder="Search...">-->
             <ion-nav-buttons side="right" >
                 <!--<ion-md-input placeholder="Search Here" highlight-color="balanced" type="text" lable-style="color:#33cd5f;" ng-click="searchBtnClicked()"></ion-md-input>-->
-                <div style="display: table; width: 100%;" ng-style="inputBoxAnimation"  ng-show="searchScreen.searchBoxVisible">
-                    <div style="display: table-row; text-align:  center;">App Name</div>
-                    <div style="display: table-row;">
-                        <input type="text"  placeholder="Search..." class="search-here"  >
-                    </div>
-                </div>
+                <!--                <div style="display: table; width: 100%;" ng-style="inputBoxAnimation"  ng-show="searchScreen.searchBoxVisible">
+                                    <div style="display: table-row;">
+                                        <div style="display: table-cell; text-align:  center; width: 20%;background: red">Logo</div>
+                                        <div style="display: table-cell;width: 20%; background: #0057e7">
+                                            <input type="text"  placeholder="Search..."   >
+                                        </div>
+                                    </div>
+                                </div>-->
 
                 <button class="button button-icon button-clear ion-android-more-vertical float-right" menu-toggle="right">
                 </button>
             </ion-nav-buttons>
+            <div class="header-bar" ng-show="searchScreen.searchBoxVisible">
+                <ul style="background: red;">
+                    <li style="width: 10%;"><i class="icon ion-social-facebook"></i></li>
+                    <li style="width: 90%;"><input type="text" ></li>
+                </ul>
+            </div>
+            <!--<input type="text" class="search-new" placeholder="Search...">-->
             <div class="quick-links" ng-show="searchScreen.searchBoxVisible">
                 <ul>
                     <li><i class="icon ion-android-mail"></i></li>
